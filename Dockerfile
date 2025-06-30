@@ -2,9 +2,9 @@ FROM ubuntu:latest
 
 RUN apt update && apt install -y nasm binutils
 
-COPY main.asm /main.asm
+COPY loop.asm /loop.asm
 
-RUN nasm -f elf64 main.asm -o main.o && \
-    ld main.o -o main
+RUN nasm -f elf64 loop.asm -o loop.o && \
+    ld loop.o -o loop
 
-CMD ["./main"]
+CMD ["./loop"]
